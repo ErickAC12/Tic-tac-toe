@@ -70,7 +70,8 @@ const displayController = (() => {
         if(gameboard[place] === "" && !gameWon){
             gameboard[place] = player.marker;
             change = true;
-            switch(place){                case 1:
+            switch(place){                
+                case 1:
                     if(square1Btn.textContent === "")
                         square1Btn.textContent = player.marker;
                         break;
@@ -107,9 +108,26 @@ const displayController = (() => {
                         square9Btn.textContent = player.marker;
                         break;
         }}
+        function isBoardFull() {
+            if (gameboard[1] !== ""
+                && gameboard[2] !== ""
+                && gameboard[3] !== ""
+                && gameboard[4] !== ""
+                && gameboard[5] !== ""
+                && gameboard[6] !== ""
+                && gameboard[7] !== ""
+                && gameboard[8] !== ""
+                && gameboard[9] !== "") {
+                    return true;
+                }
+            return false;
+        }
+
         const winText = checkWin(player);
         if(winText){
             changePlayerText(winText);
+        } else if (isBoardFull()) {
+            changePlayerText("Draw");
         } else {
             if(change){
                 changePlayer(player);
