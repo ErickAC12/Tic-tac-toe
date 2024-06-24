@@ -9,10 +9,10 @@ body {
 #player-text {
     font-family: sans-serif;
     color: black;
-    font-size: 2.5rem;
+    font-size: 3rem;
     position: absolute;
     text-align: center;
-    top: 7.5%;
+    top: 7%;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -30,6 +30,7 @@ body {
     border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 #gameboard > div {
@@ -46,6 +47,7 @@ body {
     background: white;
     padding: 0;
     border: none;
+    font-size: 4rem;
 }
 
 #reset-game-btn {
@@ -60,6 +62,7 @@ body {
     margin: 0 auto;
     padding: 2vh;
     border: 2px solid black;
+    width: 25%;
 }
 
 #reset-game-btn:hover {
